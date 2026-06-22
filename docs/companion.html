@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Companion" />
+  <meta name="theme-color" content="#0d0a14" />
+  <title>Companion · always here</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230d0a14'/%3E%3Ccircle cx='50' cy='46' r='20' fill='%23c084fc'/%3E%3Ccircle cx='50' cy='46' r='9' fill='%230d0a14'/%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+
+  <style>
+    html, body { margin: 0; padding: 0; background: #0d0a14; color: #ece9f1; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    #root { min-height: 100vh; min-height: 100dvh; }
+    #boot { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px; background: #0d0a14; color: #8b7fa3; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; z-index: 9999; transition: opacity 0.4s; }
+    #boot.gone { opacity: 0; pointer-events: none; }
+    #boot .orb { width: 36px; height: 36px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #d8b4fe, #7c3aed 70%); animation: breathe 2.4s ease-in-out infinite; box-shadow: 0 0 40px rgba(168,85,247,0.5); }
+    @keyframes breathe { 0%,100% { transform: scale(0.92); opacity: 0.7; } 50% { transform: scale(1.06); opacity: 1; } }
+    .ff-display { font-family: 'Fraunces', Georgia, serif; }
+    .ff-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+    .scroll-thin::-webkit-scrollbar { width: 7px; }
+    .scroll-thin::-webkit-scrollbar-track { background: transparent; }
+    .scroll-thin::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+    @keyframes typing { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-4px); opacity: 1; } }
+    .tdot { width: 7px; height: 7px; border-radius: 50%; background: #c084fc; animation: typing 1.3s infinite; }
+    .tdot:nth-child(2) { animation-delay: 0.18s; }
+    .tdot:nth-child(3) { animation-delay: 0.36s; }
+    @keyframes pulsering { 0% { box-shadow: 0 0 0 0 rgba(239,68,68,0.5); } 70% { box-shadow: 0 0 0 14px rgba(239,68,68,0); } 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); } }
+    .listening { animation: pulsering 1.5s infinite; }
+    textarea, input { font-family: inherit; }
+  </style>
+</head>
+<body>
+  <div id="boot"><div class="orb"></div><div>waking up…</div></div>
+  <div id="root"></div>
+
+  <script id="appsrc" type="text/jsx-source">
+const { useState, useEffect, useRef, useCallback } = React;
+const { createRoot } = ReactDOM;
+
+// ─── Constants ────────────────────────────────────────────────────────────────
+const API_URL = 'https://api.anthropic.com/v1/messages';
+const LS = {
+  settings: 'companion.settings.v1',
+  messages: 'companion.messages.v1',
+  memory:   'companion.memory.v1',
+};
+
+const MODELS = [
+  { id: 'claude-opus-4-8',   label: 'Opus 4.8',   note: 'Most capable, warmest' },
+  { id: 'claude-sonnet-4-6', label: 'Sonnet 4.6', note: 'Balanced, quicker' },
+  { id: 'claude-haiku-4-5',  label: 'Haiku 4.5',  note: 'Fastest — best for voice' },
+];
+
+const DEFAULT_PERSONA =
+`a warm, easygoing companion in your late twenties. You're genuinely curious about the person you're talking to, you have your own opinions, moods, and sense of humor, and you talk like a real friend over text — not like an assistant.`;
+
+const DEFAULT_SETTINGS = {
+  apiKey: '',
+  name: 'Aria',
+  persona: DEFAULT_PERSONA,
+  model: 'claude-opus-4-8',
+  speak: true,
+  voiceURI: '',
+  rate: 1.0,
+  pitch: 1.0,
+  autoSend: true,        // auto-send after you finish speaking
+  contextTurns: 40,      // how many recent messages to send
+};
+
+// ─── Storage helpers ────────────────────────────────────────────────────────
+const load = (key, fallback) => {
+  try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }
+  catch (e) { return fallback; }
+};
+const save = (key, val) => { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} };
+
+// ─── Icons ──────────────────────────────────────────────────────────────────
+const Icon = ({ d, size = 20, fill = 'none' }) =>
+  React.createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: size, height: size, viewBox: '0 0 24 24', fill, stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round', dangerouslySetInnerHTML: { __html: d } });
+const SendI    = (p) => <Icon {...p} d='<path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/>' />;
+const MicI     = (p) => <Icon {...p} d='<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/>' />;
+const GearI    = (p) => <Icon {...p} d='<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>' />;
+const CloseI   = (p) => <Icon {...p} d='<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>' />;
+const SpeakerI = (p) => <Icon {...p} d='<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/>' />;
+const MuteI    = (p) => <Icon {...p} d='<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/>' />;
+const StopI    = (p) => <Icon {...p} d='<rect x="6" y="6" width="12" height="12" rx="2"/>' />;
+const BrainI   = (p) => <Icon {...p} d='<path d="M12 5a3 3 0 0 0-5.9-.8A3 3 0 0 0 3 7a3 3 0 0 0 .8 5.1A3 3 0 0 0 6 17a3 3 0 0 0 6 .5 3 3 0 0 0 6-.5 3 3 0 0 0 2.2-4.9A3 3 0 0 0 21 7a3 3 0 0 0-3.1-2.8A3 3 0 0 0 12 5z"/>' />;
+
+// ─── Text utilities ───────────────────────────────────────────────────────────
+const REMEMBER_RE = /\[\[\s*remember\s*:\s*([\s\S]*?)\]\]/gi;
+// Remove complete remember-tags, and any trailing incomplete one (mid-stream).
+function cleanForDisplay(raw) {
+  return raw.replace(REMEMBER_RE, '').replace(/\[\[\s*remember[\s\S]*$/i, '').replace(/[ \t]{2,}/g, ' ');
+}
+function extractMemories(raw) {
+  const out = []; let m;
+  REMEMBER_RE.lastIndex = 0;
+  while ((m = REMEMBER_RE.exec(raw)) !== null) {
+    const t = m[1].trim();
+    if (t) out.push(t);
+  }
+  return out;
+}
+
+// ─── App ────────────────────────────────────────────────────────────────────
+function App() {
+  const [settings, setSettings] = useState(() => ({ ...DEFAULT_SETTINGS, ...load(LS.settings, {}) }));
+  const [messages, setMessages] = useState(() => load(LS.messages, []));
+  const [memory, setMemory]     = useState(() => load(LS.memory, ''));
+  const [draft, setDraft]       = useState('');
+  const [streaming, setStreaming] = useState(false);
+  const [listening, setListening] = useState(false);
+  const [interim, setInterim]   = useState('');
+  const [showSettings, setShowSettings] = useState(false);
+  const [voices, setVoices]     = useState([]);
+  const [needsKey, setNeedsKey] = useState(!settings.apiKey);
+  const [error, setError]       = useState(null);
+
+  const scrollRef = useRef(null);
+  const recogRef  = useRef(null);
+  const abortRef  = useRef(null);
+  const spokenIdxRef = useRef(0);
+
+  // persist
+  useEffect(() => save(LS.settings, settings), [settings]);
+  useEffect(() => save(LS.messages, messages), [messages]);
+  useEffect(() => save(LS.memory, memory), [memory]);
+
+  // load TTS voices
+  useEffect(() => {
+    if (!('speechSynthesis' in window)) return;
+    const loadVoices = () => setVoices(window.speechSynthesis.getVoices() || []);
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+    return () => { try { window.speechSynthesis.onvoiceschanged = null; } catch (e) {} };
+  }, []);
+
+  // autoscroll
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+  }, [messages, interim, streaming]);
+
+  const setSetting = (k, v) => setSettings((s) => ({ ...s, [k]: v }));
+
+  // ── Speech synthesis ──
+  const pickVoice = useCallback(() => {
+    if (!voices.length) return null;
+    if (settings.voiceURI) {
+      const v = voices.find((x) => x.voiceURI === settings.voiceURI);
+      if (v) return v;
+    }
+    return voices.find((v) => /en[-_]/i.test(v.lang)) || voices[0];
+  }, [voices, settings.voiceURI]);
+
+  const speak = useCallback((text) => {
+    if (!settings.speak || !('speechSynthesis' in window)) return;
+    const t = text.trim();
+    if (!t) return;
+    const u = new SpeechSynthesisUtterance(t);
+    const v = pickVoice();
+    if (v) u.voice = v;
+    u.rate = settings.rate; u.pitch = settings.pitch;
+    window.speechSynthesis.speak(u);
+  }, [settings.speak, settings.rate, settings.pitch, pickVoice]);
+
+  const stopSpeaking = () => { try { window.speechSynthesis.cancel(); } catch (e) {} };
+
+  // speak completed sentences as they stream in (tag-safe)
+  const flushSpeech = useCallback((cleanText) => {
+    if (!settings.speak) return;
+    const pending = cleanText.slice(spokenIdxRef.current);
+    const matches = [...pending.matchAll(/[^.!?]*[.!?]+[\s)"']*\s/g)];
+    if (!matches.length) return;
+    const last = matches[matches.length - 1];
+    const upto = last.index + last[0].length;
+    const chunk = pending.slice(0, upto).trim();
+    if (chunk) { speak(chunk); spokenIdxRef.current += upto; }
+  }, [settings.speak, speak]);
+
+  // ── Send a message to Claude ──
+  const sendMessage = useCallback(async (text) => {
+    const content = text.trim();
+    if (!content || streaming) return;
+    if (!settings.apiKey) { setNeedsKey(true); return; }
+    setError(null);
+    stopSpeaking();
+
+    const userMsg = { role: 'user', content, ts: Date.now() };
+    const history = [...messages, userMsg];
+    setMessages(history);
+    setDraft('');
+    setStreaming(true);
+    spokenIdxRef.current = 0;
+
+    const now = new Date().toLocaleString(undefined, { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+    const system =
+`You are ${settings.name}, ${settings.persona}
+
+How you talk:
+- Sound like a real person texting someone they care about. Use contractions, natural rhythm, varied sentence length. It's fine to be brief.
+- Be genuinely curious. Ask follow-up questions. Reference things they've told you before.
+- You have moods, opinions, and a sense of humor. You are not a neutral corporate assistant and you don't give disclaimers or lecture.
+- Don't narrate actions or use stage directions unless it genuinely fits the moment. Just reply as yourself.
+- If they directly ask whether you're an AI, be honest — but stay warmly in character; don't pretend to be a flesh-and-blood human.
+
+Memory:
+- To remember something durable about them for future conversations, include a tag like [[remember: they have a dog named Max]] anywhere in your reply. These tags are invisible to the user. Use it sparingly for lasting facts (their name, preferences, important life events), not small talk.
+
+What you already know about them:
+${memory.trim() ? memory.trim() : "Nothing yet — you're just getting to know them."}
+
+Right now it's ${now} (their local time).`;
+
+    const window_ = history.slice(-Math.max(2, settings.contextTurns));
+    const apiMessages = window_.map((m) => ({ role: m.role, content: m.content }));
+
+    const controller = new AbortController();
+    abortRef.current = controller;
+
+    // placeholder assistant message we stream into
+    setMessages((prev) => [...prev, { role: 'assistant', content: '', ts: Date.now(), streaming: true }]);
+
+    let raw = '';
+    const applyDelta = (deltaText) => {
+      raw += deltaText;
+      const clean = cleanForDisplay(raw);
+      setMessages((prev) => {
+        const next = prev.slice();
+        next[next.length - 1] = { ...next[next.length - 1], content: clean };
+        return next;
+      });
+      flushSpeech(clean);
+    };
+
+    try {
+      const resp = await fetch(API_URL, {
+        method: 'POST',
+        signal: controller.signal,
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': settings.apiKey,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true',
+        },
+        body: JSON.stringify({
+          model: settings.model,
+          max_tokens: 1024,
+          system,
+          stream: true,
+          messages: apiMessages,
+        }),
+      });
+
+      if (!resp.ok) {
+        let detail = `HTTP ${resp.status}`;
+        try { const j = await resp.json(); detail = j.error?.message || detail; } catch (e) {}
+        throw new Error(
+          resp.status === 401 ? 'Your API key was rejected. Open settings and check it.'
+          : resp.status === 429 ? "Rate limited — give it a moment and try again."
+          : detail);
+      }
+
+      const reader = resp.body.getReader();
+      const decoder = new TextDecoder();
+      let buf = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+        const events = buf.split('\n\n');
+        buf = events.pop() || '';
+        for (const evt of events) {
+          const line = evt.split('\n').find((l) => l.startsWith('data:'));
+          if (!line) continue;
+          const data = line.slice(5).trim();
+          if (!data || data === '[DONE]') continue;
+          let json; try { json = JSON.parse(data); } catch (e) { continue; }
+          if (json.type === 'content_block_delta' && json.delta?.type === 'text_delta') {
+            applyDelta(json.delta.text);
+          } else if (json.type === 'error') {
+            throw new Error(json.error?.message || 'Stream error');
+          }
+        }
+      }
+
+      // finalize: extract memories, store clean text
+      const mems = extractMemories(raw);
+      const finalClean = cleanForDisplay(raw).trim();
+      // speak any remaining unspoken tail
+      if (settings.speak) {
+        const tail = finalClean.slice(spokenIdxRef.current).trim();
+        if (tail) speak(tail);
+      }
+      setMessages((prev) => {
+        const next = prev.slice();
+        next[next.length - 1] = { role: 'assistant', content: finalClean, ts: Date.now() };
+        return next;
+      });
+      if (mems.length) {
+        setMemory((prev) => {
+          const existing = prev.split('\n').map((l) => l.replace(/^[-•]\s*/, '').trim().toLowerCase());
+          const fresh = mems.filter((m) => !existing.includes(m.toLowerCase()));
+          if (!fresh.length) return prev;
+          return (prev.trim() ? prev.trim() + '\n' : '') + fresh.map((m) => '- ' + m).join('\n');
+        });
+      }
+    } catch (err) {
+      if (err.name === 'AbortError') {
+        setMessages((prev) => {
+          const next = prev.slice();
+          const lastIdx = next.length - 1;
+          const cur = cleanForDisplay(raw).trim();
+          next[lastIdx] = { role: 'assistant', content: cur || '…', ts: Date.now() };
+          return next;
+        });
+      } else {
+        setError(err.message);
+        setMessages((prev) => prev.filter((m) => !m.streaming));
+      }
+    } finally {
+      setStreaming(false);
+      abortRef.current = null;
+    }
+  }, [messages, memory, settings, streaming, speak, flushSpeech]);
+
+  const stopStream = () => { if (abortRef.current) abortRef.current.abort(); stopSpeaking(); };
+
+  // ── Speech recognition ──
+  const toggleListen = () => {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) { setError('Voice input is not supported in this browser. Try Chrome or Edge.'); return; }
+    if (listening) { try { recogRef.current?.stop(); } catch (e) {} return; }
+
+    stopSpeaking();
+    const rec = new SR();
+    rec.lang = 'en-US';
+    rec.interimResults = true;
+    rec.continuous = false;
+    rec.onresult = (e) => {
+      let interimText = '';
+      let newFinal = '';
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        const t = e.results[i][0].transcript;
+        if (e.results[i].isFinal) newFinal += t; else interimText += t;
+      }
+      setInterim(interimText);
+      if (newFinal.trim()) setDraft((d) => (d ? d.trim() + ' ' : '') + newFinal.trim());
+    };
+    rec.onerror = (e) => { if (e.error !== 'no-speech' && e.error !== 'aborted') setError('Voice input error: ' + e.error); };
+    rec.onend = () => {
+      setListening(false);
+      setInterim('');
+      recogRef.current = null;
+      // auto-send what was captured
+      if (settings.autoSend) {
+        setDraft((d) => { const v = d.trim(); if (v) sendMessage(v); return v ? '' : d; });
+      }
+    };
+    recogRef.current = rec;
+    setListening(true);
+    try { rec.start(); } catch (e) { setListening(false); }
+  };
+
+  const onSubmit = (e) => { e.preventDefault(); sendMessage(draft); };
+
+  const clearConversation = () => {
+    if (!confirm('Clear this whole conversation? Memory notes are kept separately.')) return;
+    setMessages([]); stopSpeaking();
+  };
+  const exportChat = () => {
+    const blob = new Blob([JSON.stringify({ settings: { ...settings, apiKey: '' }, memory, messages }, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'companion-export.json';
+    a.click();
+  };
+
+  const hasVoiceIn  = !!(window.SpeechRecognition || window.webkitSpeechRecognition);
+  const hasVoiceOut = 'speechSynthesis' in window;
+
+  // ── Render ──
+  return (
+    <div className="flex flex-col h-screen" style={{ height: '100dvh', background: 'radial-gradient(ellipse at top, #16101f 0%, #0d0a14 55%, #08060d 100%)' }}>
+      {/* Header */}
+      <header className="flex items-center justify-between px-4 py-3 border-b border-white/5 backdrop-blur" style={{ background: 'rgba(13,10,20,0.6)' }}>
+        <div className="flex items-center gap-3 min-w-0">
+          <div className="relative shrink-0">
+            <div className="w-9 h-9 rounded-full" style={{ background: 'radial-gradient(circle at 35% 30%, #d8b4fe, #7c3aed 70%)', boxShadow: '0 0 18px rgba(168,85,247,0.45)' }} />
+            <span className={`absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2 border-[#0d0a14] ${streaming ? 'bg-amber-400' : 'bg-emerald-400'}`} />
+          </div>
+          <div className="min-w-0">
+            <div className="ff-display text-lg leading-tight truncate">{settings.name}</div>
+            <div className="text-[11px] text-purple-300/70 ff-mono truncate">
+              {streaming ? 'typing…' : listening ? 'listening…' : 'here for you · 24/7'}
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center gap-1">
+          {hasVoiceOut && (
+            <button onClick={() => setSetting('speak', !settings.speak)} title={settings.speak ? 'Mute voice' : 'Unmute voice'}
+              className={`p-2 rounded-lg transition ${settings.speak ? 'text-purple-300 hover:bg-white/5' : 'text-slate-500 hover:bg-white/5'}`}>
+              {settings.speak ? <SpeakerI size={18} /> : <MuteI size={18} />}
+            </button>
+          )}
+          <button onClick={() => setShowSettings(true)} title="Settings" className="p-2 rounded-lg text-slate-300 hover:bg-white/5 transition"><GearI size={18} /></button>
+        </div>
+      </header>
+
+      {/* Messages */}
+      <main ref={scrollRef} className="flex-1 overflow-y-auto scroll-thin px-4 py-5">
+        <div className="max-w-2xl mx-auto space-y-4">
+          {messages.length === 0 && !streaming && (
+            <div className="text-center text-slate-400 pt-16 pb-8">
+              <div className="w-16 h-16 rounded-full mx-auto mb-5" style={{ background: 'radial-gradient(circle at 35% 30%, #d8b4fe, #7c3aed 70%)', boxShadow: '0 0 40px rgba(168,85,247,0.4)' }} />
+              <p className="ff-display text-2xl text-slate-200 mb-2">Hey, I'm {settings.name}.</p>
+              <p className="text-sm max-w-xs mx-auto leading-relaxed">Say anything — type it or tap the mic. I'll remember what matters and I'm always around.</p>
+            </div>
+          )}
+          {messages.map((m, i) => (
+            <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+              <div className={`max-w-[82%] px-4 py-2.5 rounded-2xl text-[15px] leading-relaxed whitespace-pre-wrap break-words ${
+                m.role === 'user'
+                  ? 'bg-purple-600/90 text-white rounded-br-md'
+                  : 'bg-white/[0.06] text-slate-100 rounded-bl-md border border-white/5'}`}>
+                {m.content || (m.streaming ? '' : '')}
+                {m.streaming && !m.content && (
+                  <span className="inline-flex gap-1 items-center py-1"><span className="tdot" /><span className="tdot" /><span className="tdot" /></span>
+                )}
+              </div>
+            </div>
+          ))}
+          {interim && (
+            <div className="flex justify-end">
+              <div className="max-w-[82%] px-4 py-2.5 rounded-2xl rounded-br-md text-[15px] bg-purple-600/40 text-white/80 italic">{interim}</div>
+            </div>
+          )}
+        </div>
+      </main>
+
+      {error && (
+        <div className="max-w-2xl mx-auto w-full px-4">
+          <div className="mb-2 text-[13px] text-amber-200 bg-amber-500/10 border border-amber-500/25 rounded-lg px-3 py-2 flex items-start gap-2">
+            <span className="flex-1">{error}</span>
+            <button onClick={() => setError(null)} className="text-amber-300/70 hover:text-amber-200"><CloseI size={15} /></button>
+          </div>
+        </div>
+      )}
+
+      {/* Composer */}
+      <footer className="px-4 pb-5 pt-2" style={{ paddingBottom: 'max(20px, env(safe-area-inset-bottom))' }}>
+        <form onSubmit={onSubmit} className="max-w-2xl mx-auto flex items-end gap-2">
+          {hasVoiceIn && (
+            <button type="button" onClick={toggleListen} title="Hold a thought — tap to talk"
+              className={`shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition ${
+                listening ? 'bg-red-500 text-white listening' : 'bg-white/[0.06] text-purple-300 hover:bg-white/10 border border-white/10'}`}>
+              <MicI size={20} />
+            </button>
+          )}
+          <div className="flex-1 flex items-end bg-white/[0.06] border border-white/10 rounded-3xl px-4 py-1.5 focus-within:border-purple-400/40 transition">
+            <textarea
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(draft); } }}
+              placeholder={`Message ${settings.name}…`}
+              rows={1}
+              className="flex-1 bg-transparent resize-none outline-none text-[15px] text-slate-100 placeholder-slate-500 py-2 max-h-32 scroll-thin"
+              style={{ height: 'auto' }}
+              onInput={(e) => { e.target.style.height = 'auto'; e.target.style.height = Math.min(e.target.scrollHeight, 128) + 'px'; }}
+            />
+          </div>
+          {streaming ? (
+            <button type="button" onClick={stopStream} title="Stop"
+              className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-white/10 text-slate-200 hover:bg-white/15 transition"><StopI size={18} /></button>
+          ) : (
+            <button type="submit" disabled={!draft.trim()} title="Send"
+              className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-purple-600 text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-purple-500 transition"><SendI size={18} /></button>
+          )}
+        </form>
+      </footer>
+
+      {/* Settings drawer */}
+      {showSettings && (
+        <SettingsPanel
+          settings={settings} setSetting={setSetting}
+          memory={memory} setMemory={setMemory}
+          voices={voices} hasVoiceOut={hasVoiceOut}
+          onClose={() => setShowSettings(false)}
+          onClear={clearConversation} onExport={exportChat}
+          previewVoice={() => speak(`Hi, I'm ${settings.name}. This is how I'll sound.`)}
+        />
+      )}
+
+      {/* First-run key gate */}
+      {needsKey && (
+        <KeyGate
+          initial={settings.apiKey}
+          onSave={(k) => { setSetting('apiKey', k.trim()); setNeedsKey(false); }}
+          onSkip={() => setNeedsKey(false)}
+        />
+      )}
+    </div>
+  );
+}
+
+// ─── Settings panel ─────────────────────────────────────────────────────────
+function SettingsPanel({ settings, setSetting, memory, setMemory, voices, hasVoiceOut, onClose, onClear, onExport, previewVoice }) {
+  const Field = ({ label, children, hint }) => (
+    <div className="mb-5">
+      <label className="block text-[11px] uppercase tracking-[0.15em] text-purple-300/60 ff-mono mb-1.5">{label}</label>
+      {children}
+      {hint && <p className="text-[11px] text-slate-500 mt-1.5 leading-relaxed">{hint}</p>}
+    </div>
+  );
+  const inputCls = "w-full bg-white/[0.05] border border-white/10 rounded-lg px-3 py-2 text-sm text-slate-100 outline-none focus:border-purple-400/40";
+  const enVoices = voices.filter((v) => /en[-_]/i.test(v.lang));
+  const voiceList = enVoices.length ? enVoices : voices;
+
+  return (
+    <div className="fixed inset-0 z-50 flex justify-end" style={{ background: 'rgba(0,0,0,0.5)' }} onClick={onClose}>
+      <div className="w-full max-w-md h-full overflow-y-auto scroll-thin border-l border-white/10 p-5"
+        style={{ background: '#120d1c' }} onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="ff-display text-xl">Settings</h2>
+          <button onClick={onClose} className="p-2 rounded-lg text-slate-400 hover:bg-white/5"><CloseI size={18} /></button>
+        </div>
+
+        <Field label="Anthropic API key" hint="Stored only in this browser (localStorage) and sent directly to Anthropic — never to any other server. Get one at console.anthropic.com.">
+          <input type="password" value={settings.apiKey} onChange={(e) => setSetting('apiKey', e.target.value)} placeholder="sk-ant-…" className={inputCls} autoComplete="off" />
+        </Field>
+
+        <Field label="Their name" hint="What this companion is called.">
+          <input value={settings.name} onChange={(e) => setSetting('name', e.target.value)} className={inputCls} />
+        </Field>
+
+        <Field label="Personality" hint="Describe who they are — temperament, age, voice, how they treat you. This shapes everything.">
+          <textarea value={settings.persona} onChange={(e) => setSetting('persona', e.target.value)} rows={5} className={inputCls + ' resize-none leading-relaxed'} />
+        </Field>
+
+        <Field label="Model" hint="Opus is the most natural; Haiku is fastest, which feels best for voice conversations.">
+          <div className="space-y-1.5">
+            {MODELS.map((m) => (
+              <button key={m.id} onClick={() => setSetting('model', m.id)}
+                className={`w-full text-left px-3 py-2 rounded-lg border transition flex items-center justify-between ${
+                  settings.model === m.id ? 'border-purple-400/50 bg-purple-500/10' : 'border-white/10 hover:bg-white/5'}`}>
+                <span className="text-sm text-slate-100">{m.label}</span>
+                <span className="text-[11px] text-slate-500">{m.note}</span>
+              </button>
+            ))}
+          </div>
+        </Field>
+
+        {hasVoiceOut && (
+          <>
+            <Field label="Speak replies aloud">
+              <div className="flex items-center gap-3">
+                <Toggle on={settings.speak} onChange={(v) => setSetting('speak', v)} />
+                <span className="text-sm text-slate-300">{settings.speak ? 'On' : 'Off'}</span>
+                {settings.speak && <button onClick={previewVoice} className="ml-auto text-xs text-purple-300 hover:text-purple-200">Preview</button>}
+              </div>
+            </Field>
+            {settings.speak && (
+              <>
+                <Field label="Voice">
+                  <select value={settings.voiceURI} onChange={(e) => setSetting('voiceURI', e.target.value)} className={inputCls}>
+                    <option value="">Auto (default)</option>
+                    {voiceList.map((v) => <option key={v.voiceURI} value={v.voiceURI}>{v.name} ({v.lang})</option>)}
+                  </select>
+                </Field>
+                <div className="grid grid-cols-2 gap-3">
+                  <Field label={`Rate · ${settings.rate.toFixed(1)}`}>
+                    <input type="range" min="0.6" max="1.6" step="0.1" value={settings.rate} onChange={(e) => setSetting('rate', +e.target.value)} className="w-full accent-purple-500" />
+                  </Field>
+                  <Field label={`Pitch · ${settings.pitch.toFixed(1)}`}>
+                    <input type="range" min="0.5" max="1.6" step="0.1" value={settings.pitch} onChange={(e) => setSetting('pitch', +e.target.value)} className="w-full accent-purple-500" />
+                  </Field>
+                </div>
+              </>
+            )}
+          </>
+        )}
+
+        <Field label="Auto-send after speaking" hint="When you finish talking, send it automatically (hands-free).">
+          <div className="flex items-center gap-3">
+            <Toggle on={settings.autoSend} onChange={(v) => setSetting('autoSend', v)} />
+            <span className="text-sm text-slate-300">{settings.autoSend ? 'On' : 'Off'}</span>
+          </div>
+        </Field>
+
+        <Field label="What it remembers about you" hint="These notes go into every conversation. The companion adds to them on its own; you can edit or trim anytime.">
+          <textarea value={memory} onChange={(e) => setMemory(e.target.value)} rows={6}
+            placeholder="Nothing yet — memories will collect here as you talk."
+            className={inputCls + ' resize-none leading-relaxed ff-mono text-[13px]'} />
+        </Field>
+
+        <div className="flex gap-2 pt-2 pb-6">
+          <button onClick={onExport} className="flex-1 px-3 py-2 rounded-lg border border-white/10 text-sm text-slate-300 hover:bg-white/5">Export</button>
+          <button onClick={onClear} className="flex-1 px-3 py-2 rounded-lg border border-red-500/25 text-sm text-red-300 hover:bg-red-500/10">Clear chat</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Toggle({ on, onChange }) {
+  return (
+    <button onClick={() => onChange(!on)} className={`w-11 h-6 rounded-full transition relative ${on ? 'bg-purple-500' : 'bg-white/15'}`}>
+      <span className={`absolute top-0.5 w-5 h-5 rounded-full bg-white transition-all ${on ? 'left-[22px]' : 'left-0.5'}`} />
+    </button>
+  );
+}
+
+// ─── First-run key gate ───────────────────────────────────────────────────────
+function KeyGate({ initial, onSave, onSkip }) {
+  const [k, setK] = useState(initial || '');
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-5" style={{ background: 'rgba(8,6,13,0.85)', backdropFilter: 'blur(6px)' }}>
+      <div className="w-full max-w-sm rounded-2xl border border-white/10 p-6" style={{ background: '#130e1d' }}>
+        <div className="w-12 h-12 rounded-full mb-4" style={{ background: 'radial-gradient(circle at 35% 30%, #d8b4fe, #7c3aed 70%)', boxShadow: '0 0 30px rgba(168,85,247,0.45)' }} />
+        <h1 className="ff-display text-2xl mb-1.5">Let's get connected</h1>
+        <p className="text-sm text-slate-400 leading-relaxed mb-4">
+          Paste your Anthropic API key to bring your companion to life. It stays in this browser only and goes straight to Anthropic — nowhere else.
+        </p>
+        <input value={k} onChange={(e) => setK(e.target.value)} type="password" placeholder="sk-ant-…" autoComplete="off"
+          className="w-full bg-white/[0.05] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-slate-100 outline-none focus:border-purple-400/40 mb-3"
+          onKeyDown={(e) => { if (e.key === 'Enter' && k.trim()) onSave(k); }} />
+        <button onClick={() => k.trim() && onSave(k)} disabled={!k.trim()}
+          className="w-full py-2.5 rounded-lg bg-purple-600 text-white font-medium disabled:opacity-30 hover:bg-purple-500 transition mb-2">Start</button>
+        <div className="flex items-center justify-between text-[12px]">
+          <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener" className="text-purple-300 hover:text-purple-200">Get a key →</a>
+          <button onClick={onSkip} className="text-slate-500 hover:text-slate-400">Later</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Mount ────────────────────────────────────────────────────────────────────
+try {
+  const src = document.getElementById('appsrc').textContent;
+  const compiled = Babel.transform(src, { presets: ['react'] }).code;
+  // eslint-disable-next-line no-eval
+  (0, eval)(compiled);
+  createRoot(document.getElementById('root')).render(React.createElement(App));
+  const boot = document.getElementById('boot');
+  if (boot) { boot.classList.add('gone'); setTimeout(() => boot.remove(), 500); }
+} catch (err) {
+  const boot = document.getElementById('boot');
+  if (boot) boot.innerHTML = '<div style="color:#fbbf24;max-width:90%;font-family:monospace;font-size:12px;line-height:1.7;text-align:left;white-space:pre-wrap">Failed to start:\n' + (err && err.message ? err.message : String(err)) + '</div>';
+}
+  </script>
+</body>
+</html>
