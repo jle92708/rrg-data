@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T23:00:50.423165Z",
+  "generatedAt": "2026-07-02T22:55:58.972049Z",
   "source": "alpaca",
   "benchmark": "SPY",
   "tail": 8,
@@ -39,18 +39,18 @@
           "m": 100.332
         },
         {
-          "r": 107.448,
-          "m": 99.172
+          "r": 107.205,
+          "m": 98.808
         }
       ],
       "current": {
-        "r": 107.448,
-        "m": 99.172
+        "r": 107.205,
+        "m": 98.808
       },
       "quadrant": "weakening",
       "rs": {
-        "ratio": 107.448,
-        "momentum": 99.172
+        "ratio": 107.205,
+        "momentum": 98.808
       }
     },
     {
@@ -87,18 +87,18 @@
           "m": 100.361
         },
         {
-          "r": 94.047,
-          "m": 100.65
+          "r": 93.971,
+          "m": 100.536
         }
       ],
       "current": {
-        "r": 94.047,
-        "m": 100.65
+        "r": 93.971,
+        "m": 100.536
       },
       "quadrant": "improving",
       "rs": {
-        "ratio": 94.047,
-        "momentum": 100.65
+        "ratio": 93.971,
+        "momentum": 100.536
       }
     },
     {
@@ -135,18 +135,18 @@
           "m": 100.281
         },
         {
-          "r": 101.246,
-          "m": 101.966
+          "r": 101.311,
+          "m": 102.064
         }
       ],
       "current": {
-        "r": 101.246,
-        "m": 101.966
+        "r": 101.311,
+        "m": 102.064
       },
       "quadrant": "leading",
       "rs": {
-        "ratio": 101.246,
-        "momentum": 101.966
+        "ratio": 101.311,
+        "momentum": 102.064
       }
     },
     {
@@ -231,18 +231,18 @@
           "m": 98.988
         },
         {
-          "r": 97.058,
-          "m": 99.53
+          "r": 97.211,
+          "m": 99.759
         }
       ],
       "current": {
-        "r": 97.058,
-        "m": 99.53
+        "r": 97.211,
+        "m": 99.759
       },
       "quadrant": "lagging",
       "rs": {
-        "ratio": 97.058,
-        "momentum": 99.53
+        "ratio": 97.211,
+        "momentum": 99.759
       }
     },
     {
@@ -279,18 +279,18 @@
           "m": 97.347
         },
         {
-          "r": 94.993,
-          "m": 99.027
+          "r": 95.303,
+          "m": 99.492
         }
       ],
       "current": {
-        "r": 94.993,
-        "m": 99.027
+        "r": 95.303,
+        "m": 99.492
       },
       "quadrant": "lagging",
       "rs": {
-        "ratio": 94.993,
-        "momentum": 99.027
+        "ratio": 95.303,
+        "momentum": 99.492
       }
     },
     {
@@ -327,18 +327,18 @@
           "m": 99.842
         },
         {
-          "r": 97.792,
-          "m": 100.248
+          "r": 97.91,
+          "m": 100.425
         }
       ],
       "current": {
-        "r": 97.792,
-        "m": 100.248
+        "r": 97.91,
+        "m": 100.425
       },
       "quadrant": "improving",
       "rs": {
-        "ratio": 97.792,
-        "momentum": 100.248
+        "ratio": 97.91,
+        "momentum": 100.425
       }
     },
     {
@@ -375,18 +375,18 @@
           "m": 97.323
         },
         {
-          "r": 101.695,
-          "m": 97.489
+          "r": 101.741,
+          "m": 97.557
         }
       ],
       "current": {
-        "r": 101.695,
-        "m": 97.489
+        "r": 101.741,
+        "m": 97.557
       },
       "quadrant": "weakening",
       "rs": {
-        "ratio": 101.695,
-        "momentum": 97.489
+        "ratio": 101.741,
+        "momentum": 97.557
       }
     },
     {
@@ -423,18 +423,18 @@
           "m": 101.789
         },
         {
-          "r": 96.778,
-          "m": 103.174
+          "r": 97.145,
+          "m": 103.725
         }
       ],
       "current": {
-        "r": 96.778,
-        "m": 103.174
+        "r": 97.145,
+        "m": 103.725
       },
       "quadrant": "improving",
       "rs": {
-        "ratio": 96.778,
-        "momentum": 103.174
+        "ratio": 97.145,
+        "momentum": 103.725
       }
     },
     {
@@ -471,18 +471,18 @@
           "m": 101.495
         },
         {
-          "r": 96.0,
-          "m": 102.195
+          "r": 96.117,
+          "m": 102.371
         }
       ],
       "current": {
-        "r": 96.0,
-        "m": 102.195
+        "r": 96.117,
+        "m": 102.371
       },
       "quadrant": "improving",
       "rs": {
-        "ratio": 96.0,
-        "momentum": 102.195
+        "ratio": 96.117,
+        "momentum": 102.371
       }
     },
     {
@@ -519,18 +519,18 @@
           "m": 98.688
         },
         {
-          "r": 99.587,
-          "m": 99.108
+          "r": 99.811,
+          "m": 99.444
         }
       ],
       "current": {
-        "r": 99.587,
-        "m": 99.108
+        "r": 99.811,
+        "m": 99.444
       },
       "quadrant": "lagging",
       "rs": {
-        "ratio": 99.587,
-        "momentum": 99.108
+        "ratio": 99.811,
+        "momentum": 99.444
       }
     }
   ],
@@ -541,60 +541,60 @@
           "name": "Software",
           "color": "#06b6d4",
           "rs": {
-            "ratio": 95.78,
-            "momentum": 99.79
+            "ratio": 95.81,
+            "momentum": 99.82
           },
           "sctr": 12,
           "stocks": [
             {
               "ticker": "NOW",
               "name": "NOW",
-              "price": 105.81,
-              "sctr": 21,
-              "pctRank": 11,
-              "r1": -22.1,
-              "r3": 1.21,
-              "r6": -31.53
+              "price": 106.16,
+              "sctr": 20,
+              "pctRank": 8,
+              "r1": -16.81,
+              "r3": 2.1,
+              "r6": -31.15
             },
             {
               "ticker": "MSFT",
               "name": "MSFT",
-              "price": 384.38,
+              "price": 389.79,
               "sctr": 15,
-              "pctRank": 6,
-              "r1": -16.53,
-              "r3": 4.07,
-              "r6": -20.75
+              "pctRank": 5,
+              "r1": -11.68,
+              "r3": 5.73,
+              "r6": -19.69
             },
             {
               "ticker": "CRM",
               "name": "CRM",
-              "price": 163.29,
-              "sctr": 10,
-              "pctRank": 2,
-              "r1": -21.9,
-              "r3": -12.07,
-              "r6": -38.35
+              "price": 166.14,
+              "sctr": 11,
+              "pctRank": 3,
+              "r1": -17.08,
+              "r3": -10.33,
+              "r6": -37.21
             },
             {
               "ticker": "ADBE",
               "name": "ADBE",
-              "price": 210.94,
-              "sctr": 8,
-              "pctRank": 1,
-              "r1": -23.02,
-              "r3": -13.19,
-              "r6": -40.26
+              "price": 219.65,
+              "sctr": 10,
+              "pctRank": 2,
+              "r1": -16.2,
+              "r3": -8.98,
+              "r6": -37.69
             },
             {
               "ticker": "ORCL",
               "name": "ORCL",
-              "price": 142.77,
+              "price": 140.29,
               "sctr": 6,
               "pctRank": 0,
-              "r1": -42.46,
-              "r3": -2.61,
-              "r6": -26.48
+              "r1": -42.63,
+              "r3": -3.03,
+              "r6": -28.4
             }
           ]
         },
@@ -602,70 +602,70 @@
           "name": "Semiconductors",
           "color": "#0891b2",
           "rs": {
-            "ratio": 107.03,
-            "momentum": 98.93
+            "ratio": 106.91,
+            "momentum": 98.75
           },
-          "sctr": 58,
+          "sctr": 52,
           "stocks": [
             {
               "ticker": "AMD",
               "name": "AMD",
-              "price": 540.89,
-              "sctr": 88,
-              "pctRank": 96,
-              "r1": 6.05,
-              "r3": 166.12,
-              "r6": 150.85
+              "price": 518.25,
+              "sctr": 83,
+              "pctRank": 94,
+              "r1": -0.62,
+              "r3": 146.53,
+              "r6": 140.6
             },
             {
               "ticker": "MU",
               "name": "MU",
-              "price": 1032.64,
-              "sctr": 81,
-              "pctRank": 90,
-              "r1": -0.24,
-              "r3": 205.94,
-              "r6": 250.94
+              "price": 975.4,
+              "sctr": 80,
+              "pctRank": 87,
+              "r1": -8.35,
+              "r3": 165.13,
+              "r6": 233.48
             },
             {
               "ticker": "TXN",
               "name": "TXN",
-              "price": 298.52,
-              "sctr": 74,
-              "pctRank": 79,
-              "r1": 1.77,
-              "r3": 54.58,
-              "r6": 71.87
-            },
-            {
-              "ticker": "QCOM",
-              "name": "QCOM",
-              "price": 181.95,
-              "sctr": 37,
-              "pctRank": 28,
-              "r1": -20.25,
-              "r3": 41.89,
-              "r6": 5.95
+              "price": 293.1,
+              "sctr": 72,
+              "pctRank": 78,
+              "r1": -4.92,
+              "r3": 50.08,
+              "r6": 69.03
             },
             {
               "ticker": "NVDA",
               "name": "NVDA",
-              "price": 197.54,
-              "sctr": 36,
-              "pctRank": 27,
-              "r1": -11.88,
-              "r3": 13.39,
-              "r6": 5.07
+              "price": 194.51,
+              "sctr": 27,
+              "pctRank": 19,
+              "r1": -12.6,
+              "r3": 10.76,
+              "r6": 3.85
+            },
+            {
+              "ticker": "QCOM",
+              "name": "QCOM",
+              "price": 176.12,
+              "sctr": 26,
+              "pctRank": 18,
+              "r1": -26.62,
+              "r3": 38.9,
+              "r6": 2.45
             },
             {
               "ticker": "AVGO",
               "name": "AVGO",
-              "price": 369.33,
-              "sctr": 32,
-              "pctRank": 23,
-              "r1": -19.6,
-              "r3": 19.53,
-              "r6": 6.09
+              "price": 360.5,
+              "sctr": 24,
+              "pctRank": 16,
+              "r1": -25.08,
+              "r3": 15.17,
+              "r6": 3.4
             }
           ]
         },
@@ -681,42 +681,42 @@
             {
               "ticker": "DELL",
               "name": "DELL",
-              "price": 425.24,
-              "sctr": 89,
-              "pctRank": 97,
-              "r1": -8.77,
-              "r3": 159.77,
-              "r6": 236.21
+              "price": 394.19,
+              "sctr": 82,
+              "pctRank": 93,
+              "r1": -9.47,
+              "r3": 133.37,
+              "r6": 210.46
             },
             {
               "ticker": "CSCO",
               "name": "CSCO",
-              "price": 117.03,
-              "sctr": 76,
-              "pctRank": 84,
-              "r1": -3.56,
-              "r3": 51.69,
-              "r6": 52.07
+              "price": 112.69,
+              "sctr": 68,
+              "pctRank": 74,
+              "r1": -11.96,
+              "r3": 45.33,
+              "r6": 47.17
             },
             {
               "ticker": "AAPL",
               "name": "AAPL",
-              "price": 294.42,
-              "sctr": 50,
-              "pctRank": 46,
-              "r1": -3.87,
-              "r3": 16.14,
-              "r6": 7.74
+              "price": 308.24,
+              "sctr": 62,
+              "pctRank": 65,
+              "r1": -2.21,
+              "r3": 20.79,
+              "r6": 13.1
             },
             {
               "ticker": "IBM",
               "name": "IBM",
-              "price": 286.28,
-              "sctr": 48,
-              "pctRank": 45,
-              "r1": -10.57,
-              "r3": 18.96,
-              "r6": -5.07
+              "price": 289.22,
+              "sctr": 49,
+              "pctRank": 42,
+              "r1": -12.24,
+              "r3": 19.79,
+              "r6": -2.99
             }
           ]
         }
@@ -728,60 +728,60 @@
           "name": "Banks",
           "color": "#3b82f6",
           "rs": {
-            "ratio": 100.31,
-            "momentum": 106.5
+            "ratio": 100.32,
+            "momentum": 106.51
           },
-          "sctr": 67,
+          "sctr": 60,
           "stocks": [
             {
               "ticker": "USB",
               "name": "USB",
-              "price": 61.97,
-              "sctr": 83,
-              "pctRank": 93,
-              "r1": 16.73,
-              "r3": 20.19,
-              "r6": 16.97
+              "price": 61.72,
+              "sctr": 78,
+              "pctRank": 86,
+              "r1": 13.95,
+              "r3": 17.98,
+              "r6": 16.88
             },
             {
               "ticker": "C",
               "name": "C",
-              "price": 140.16,
-              "sctr": 78,
-              "pctRank": 86,
-              "r1": 8.6,
-              "r3": 24.16,
-              "r6": 19.91
+              "price": 139.97,
+              "sctr": 70,
+              "pctRank": 75,
+              "r1": 6.64,
+              "r3": 21.94,
+              "r6": 20.61
             },
             {
               "ticker": "BAC",
               "name": "BAC",
-              "price": 58.38,
-              "sctr": 68,
-              "pctRank": 72,
-              "r1": 13.97,
-              "r3": 20.41,
-              "r6": 6.66
+              "price": 58.69,
+              "sctr": 62,
+              "pctRank": 65,
+              "r1": 12.39,
+              "r3": 19.73,
+              "r6": 7.31
             },
             {
               "ticker": "JPM",
               "name": "JPM",
-              "price": 334.06,
-              "sctr": 59,
-              "pctRank": 60,
-              "r1": 12.6,
-              "r3": 14.14,
-              "r6": 4.18
+              "price": 334.26,
+              "sctr": 54,
+              "pctRank": 54,
+              "r1": 11.05,
+              "r3": 13.78,
+              "r6": 4.33
             },
             {
               "ticker": "WFC",
               "name": "WFC",
-              "price": 85.94,
-              "sctr": 47,
-              "pctRank": 43,
-              "r1": 11.29,
-              "r3": 8.57,
-              "r6": -8.14
+              "price": 85.51,
+              "sctr": 40,
+              "pctRank": 32,
+              "r1": 7.64,
+              "r3": 6.78,
+              "r6": -8.4
             }
           ]
         },
@@ -789,50 +789,50 @@
           "name": "Insurance",
           "color": "#2563eb",
           "rs": {
-            "ratio": 97.84,
-            "momentum": 101.37
+            "ratio": 98.04,
+            "momentum": 101.67
           },
-          "sctr": 64,
+          "sctr": 70,
           "stocks": [
             {
               "ticker": "TRV",
               "name": "TRV",
-              "price": 334.73,
-              "sctr": 81,
-              "pctRank": 90,
-              "r1": 16.34,
-              "r3": 15.28,
-              "r6": 15.53
+              "price": 342.25,
+              "sctr": 83,
+              "pctRank": 94,
+              "r1": 17.76,
+              "r3": 18.31,
+              "r6": 17.99
             },
             {
               "ticker": "CB",
               "name": "CB",
-              "price": 351.7,
-              "sctr": 77,
-              "pctRank": 85,
-              "r1": 13.88,
-              "r3": 8.26,
-              "r6": 12.53
+              "price": 361.22,
+              "sctr": 81,
+              "pctRank": 91,
+              "r1": 16.04,
+              "r3": 10.75,
+              "r6": 15.69
             },
             {
               "ticker": "PGR",
               "name": "PGR",
-              "price": 225.12,
-              "sctr": 63,
-              "pctRank": 66,
-              "r1": 16.9,
-              "r3": 13.63,
-              "r6": 4.82
+              "price": 232.25,
+              "sctr": 70,
+              "pctRank": 75,
+              "r1": 17.99,
+              "r3": 20.24,
+              "r6": 7.51
             },
             {
               "ticker": "AIG",
               "name": "AIG",
-              "price": 76.61,
-              "sctr": 36,
-              "pctRank": 27,
-              "r1": 5.02,
-              "r3": 2.52,
-              "r6": -10.33
+              "price": 79.42,
+              "sctr": 46,
+              "pctRank": 39,
+              "r1": 8.33,
+              "r3": 5.77,
+              "r6": -6.63
             }
           ]
         },
@@ -840,50 +840,50 @@
           "name": "Capital Markets",
           "color": "#1d4ed8",
           "rs": {
-            "ratio": 99.24,
-            "momentum": 101.01
+            "ratio": 99.42,
+            "momentum": 101.28
           },
-          "sctr": 50,
+          "sctr": 47,
           "stocks": [
             {
               "ticker": "MS",
               "name": "MS",
-              "price": 211.88,
-              "sctr": 68,
-              "pctRank": 72,
-              "r1": 0.42,
-              "r3": 29.44,
-              "r6": 19.08
+              "price": 213.89,
+              "sctr": 65,
+              "pctRank": 71,
+              "r1": -0.53,
+              "r3": 29.4,
+              "r6": 20.74
             },
             {
               "ticker": "GS",
               "name": "GS",
-              "price": 1019.55,
-              "sctr": 62,
-              "pctRank": 64,
-              "r1": -2.74,
-              "r3": 21.09,
-              "r6": 15.38
+              "price": 1020.89,
+              "sctr": 53,
+              "pctRank": 51,
+              "r1": -4.17,
+              "r3": 19.22,
+              "r6": 16.64
             },
             {
               "ticker": "SCHW",
               "name": "SCHW",
-              "price": 95.77,
+              "price": 96.96,
               "sctr": 50,
-              "pctRank": 46,
-              "r1": 7.91,
-              "r3": 2.28,
-              "r6": -4.84
+              "pctRank": 44,
+              "r1": 10.68,
+              "r3": 5.38,
+              "r6": -2.89
             },
             {
               "ticker": "BLK",
               "name": "BLK",
-              "price": 980.67,
+              "price": 994.64,
               "sctr": 23,
-              "pctRank": 15,
-              "r1": -3.29,
-              "r3": 2.54,
-              "r6": -8.84
+              "pctRank": 13,
+              "r1": -1.85,
+              "r3": 4.54,
+              "r6": -7.16
             }
           ]
         },
@@ -891,40 +891,40 @@
           "name": "Payments",
           "color": "#1e40af",
           "rs": {
-            "ratio": 95.83,
-            "momentum": 101.54
+            "ratio": 95.95,
+            "momentum": 101.72
           },
-          "sctr": 53,
+          "sctr": 56,
           "stocks": [
             {
               "ticker": "V",
               "name": "V",
-              "price": 351.28,
-              "sctr": 61,
-              "pctRank": 63,
-              "r1": 8.85,
-              "r3": 16.47,
-              "r6": -0.53
+              "price": 361.65,
+              "sctr": 66,
+              "pctRank": 72,
+              "r1": 13.99,
+              "r3": 21.41,
+              "r6": 2.67
             },
             {
               "ticker": "AXP",
               "name": "AXP",
-              "price": 348.07,
-              "sctr": 53,
-              "pctRank": 52,
-              "r1": 10.99,
-              "r3": 15.41,
-              "r6": -6.75
+              "price": 351.88,
+              "sctr": 52,
+              "pctRank": 49,
+              "r1": 13.48,
+              "r3": 17.41,
+              "r6": -5.0
             },
             {
               "ticker": "MA",
               "name": "MA",
-              "price": 522.58,
-              "sctr": 45,
-              "pctRank": 40,
-              "r1": 5.48,
-              "r3": 4.75,
-              "r6": -9.29
+              "price": 539.36,
+              "sctr": 50,
+              "pctRank": 44,
+              "r1": 12.89,
+              "r3": 9.92,
+              "r6": -6.27
             }
           ]
         }
@@ -936,50 +936,50 @@
           "name": "Machinery",
           "color": "#10b981",
           "rs": {
-            "ratio": 104.72,
-            "momentum": 100.87
+            "ratio": 104.6,
+            "momentum": 100.68
           },
-          "sctr": 68,
+          "sctr": 59,
           "stocks": [
-            {
-              "ticker": "CAT",
-              "name": "CAT",
-              "price": 991.98,
-              "sctr": 86,
-              "pctRank": 95,
-              "r1": 14.65,
-              "r3": 40.28,
-              "r6": 72.12
-            },
             {
               "ticker": "DE",
               "name": "DE",
-              "price": 628.6,
-              "sctr": 86,
-              "pctRank": 95,
-              "r1": 16.11,
-              "r3": 11.89,
-              "r6": 34.87
+              "price": 620.65,
+              "sctr": 78,
+              "pctRank": 86,
+              "r1": 7.42,
+              "r3": 9.2,
+              "r6": 33.23
+            },
+            {
+              "ticker": "CAT",
+              "name": "CAT",
+              "price": 963.6,
+              "sctr": 77,
+              "pctRank": 84,
+              "r1": 5.88,
+              "r3": 32.22,
+              "r6": 67.6
             },
             {
               "ticker": "ETN",
               "name": "ETN",
-              "price": 412.16,
-              "sctr": 66,
-              "pctRank": 69,
-              "r1": 3.0,
-              "r3": 15.44,
-              "r6": 28.89
+              "price": 398.67,
+              "sctr": 51,
+              "pctRank": 48,
+              "r1": -4.56,
+              "r3": 9.3,
+              "r6": 24.77
             },
             {
               "ticker": "EMR",
               "name": "EMR",
-              "price": 139.5,
-              "sctr": 37,
-              "pctRank": 28,
-              "r1": -1.56,
-              "r3": 6.87,
-              "r6": 3.96
+              "price": 139.06,
+              "sctr": 30,
+              "pctRank": 26,
+              "r1": -2.08,
+              "r3": 5.44,
+              "r6": 3.59
             }
           ]
         },
@@ -987,60 +987,60 @@
           "name": "Defense",
           "color": "#059669",
           "rs": {
-            "ratio": 96.53,
-            "momentum": 97.51
+            "ratio": 96.82,
+            "momentum": 97.95
           },
-          "sctr": 43,
+          "sctr": 49,
           "stocks": [
-            {
-              "ticker": "GD",
-              "name": "GD",
-              "price": 362.89,
-              "sctr": 60,
-              "pctRank": 63,
-              "r1": 7.0,
-              "r3": 6.23,
-              "r6": 7.54
-            },
             {
               "ticker": "RTX",
               "name": "RTX",
-              "price": 191.77,
-              "sctr": 58,
-              "pctRank": 59,
-              "r1": 10.05,
-              "r3": -0.12,
-              "r6": 4.82
+              "price": 199.22,
+              "sctr": 64,
+              "pctRank": 67,
+              "r1": 14.31,
+              "r3": 2.79,
+              "r6": 9.11
+            },
+            {
+              "ticker": "GD",
+              "name": "GD",
+              "price": 373.55,
+              "sctr": 64,
+              "pctRank": 67,
+              "r1": 11.1,
+              "r3": 7.5,
+              "r6": 11.47
             },
             {
               "ticker": "LMT",
               "name": "LMT",
-              "price": 521.27,
-              "sctr": 42,
-              "pctRank": 37,
-              "r1": 0.92,
-              "r3": -13.15,
-              "r6": 7.93
+              "price": 545.86,
+              "sctr": 50,
+              "pctRank": 44,
+              "r1": 6.33,
+              "r3": -11.13,
+              "r6": 13.18
             },
             {
               "ticker": "BA",
               "name": "BA",
-              "price": 218.61,
-              "sctr": 37,
-              "pctRank": 28,
-              "r1": -2.55,
-              "r3": 9.8,
-              "r6": 0.58
+              "price": 226.37,
+              "sctr": 40,
+              "pctRank": 32,
+              "r1": 3.99,
+              "r3": 9.19,
+              "r6": 3.61
             },
             {
               "ticker": "NOC",
               "name": "NOC",
-              "price": 519.9,
-              "sctr": 22,
-              "pctRank": 13,
-              "r1": -3.54,
-              "r3": -23.47,
-              "r6": -9.36
+              "price": 548.2,
+              "sctr": 28,
+              "pctRank": 21,
+              "r1": 2.2,
+              "r3": -21.02,
+              "r6": -3.84
             }
           ]
         },
@@ -1048,60 +1048,60 @@
           "name": "Transports",
           "color": "#047857",
           "rs": {
-            "ratio": 103.83,
-            "momentum": 100.27
+            "ratio": 103.87,
+            "momentum": 100.33
           },
-          "sctr": 76,
+          "sctr": 74,
           "stocks": [
             {
               "ticker": "DAL",
               "name": "DAL",
-              "price": 93.07,
-              "sctr": 93,
+              "price": 92.78,
+              "sctr": 92,
               "pctRank": 99,
-              "r1": 14.22,
-              "r3": 40.29,
-              "r6": 34.63
+              "r1": 15.95,
+              "r3": 37.61,
+              "r6": 34.48
             },
             {
               "ticker": "CSX",
               "name": "CSX",
-              "price": 48.34,
-              "sctr": 81,
-              "pctRank": 90,
-              "r1": 5.41,
-              "r3": 18.13,
-              "r6": 32.51
+              "price": 48.87,
+              "sctr": 82,
+              "pctRank": 93,
+              "r1": 5.94,
+              "r3": 18.33,
+              "r6": 35.04
             },
             {
               "ticker": "UNP",
               "name": "UNP",
-              "price": 277.73,
+              "price": 282.22,
               "sctr": 75,
               "pctRank": 81,
-              "r1": 5.41,
-              "r3": 15.13,
-              "r6": 19.68
+              "r1": 6.59,
+              "r3": 16.7,
+              "r6": 22.39
             },
             {
               "ticker": "FDX",
               "name": "FDX",
-              "price": 313.98,
-              "sctr": 69,
-              "pctRank": 75,
-              "r1": -6.86,
-              "r3": 9.86,
-              "r6": 34.16
+              "price": 313.07,
+              "sctr": 64,
+              "pctRank": 67,
+              "r1": -4.48,
+              "r3": 8.56,
+              "r6": 34.69
             },
             {
               "ticker": "UPS",
               "name": "UPS",
-              "price": 109.57,
-              "sctr": 65,
-              "pctRank": 68,
-              "r1": 0.45,
-              "r3": 13.27,
-              "r6": 13.39
+              "price": 110.67,
+              "sctr": 60,
+              "pctRank": 62,
+              "r1": 1.56,
+              "r3": 14.93,
+              "r6": 14.55
             }
           ]
         }
@@ -1113,30 +1113,30 @@
           "name": "Retail",
           "color": "#c4b5fd",
           "rs": {
-            "ratio": 100.51,
-            "momentum": 95.26
+            "ratio": 100.7,
+            "momentum": 95.55
           },
-          "sctr": 56,
+          "sctr": 58,
           "stocks": [
             {
               "ticker": "EBAY",
               "name": "EBAY",
-              "price": 111.28,
-              "sctr": 75,
-              "pctRank": 81,
-              "r1": 0.82,
-              "r3": 22.56,
-              "r6": 27.55
+              "price": 114.86,
+              "sctr": 80,
+              "pctRank": 87,
+              "r1": 5.51,
+              "r3": 23.63,
+              "r6": 32.69
             },
             {
               "ticker": "AMZN",
               "name": "AMZN",
-              "price": 241.74,
-              "sctr": 38,
+              "price": 242.3,
+              "sctr": 37,
               "pctRank": 31,
-              "r1": -7.45,
-              "r3": 16.0,
-              "r6": 4.15
+              "r1": -5.55,
+              "r3": 15.05,
+              "r6": 4.22
             }
           ]
         },
@@ -1144,40 +1144,40 @@
           "name": "Auto",
           "color": "#e9d5ff",
           "rs": {
-            "ratio": 98.55,
-            "momentum": 98.8
+            "ratio": 98.17,
+            "momentum": 98.23
           },
-          "sctr": 35,
+          "sctr": 24,
           "stocks": [
-            {
-              "ticker": "TSLA",
-              "name": "TSLA",
-              "price": 425.36,
-              "sctr": 43,
-              "pctRank": 39,
-              "r1": 2.36,
-              "r3": 14.44,
-              "r6": -7.47
-            },
             {
               "ticker": "F",
               "name": "F",
-              "price": 13.65,
-              "sctr": 39,
-              "pctRank": 33,
-              "r1": -17.97,
-              "r3": 20.05,
-              "r6": 5.24
+              "price": 13.35,
+              "sctr": 28,
+              "pctRank": 21,
+              "r1": -17.45,
+              "r3": 15.74,
+              "r6": 3.13
             },
             {
               "ticker": "GM",
               "name": "GM",
-              "price": 75.53,
-              "sctr": 25,
-              "pctRank": 17,
-              "r1": -8.46,
-              "r3": 1.6,
-              "r6": -8.52
+              "price": 75.98,
+              "sctr": 23,
+              "pctRank": 13,
+              "r1": -6.85,
+              "r3": 1.5,
+              "r6": -7.28
+            },
+            {
+              "ticker": "TSLA",
+              "name": "TSLA",
+              "price": 392.82,
+              "sctr": 21,
+              "pctRank": 11,
+              "r1": -7.3,
+              "r3": 3.02,
+              "r6": -13.5
             }
           ]
         },
@@ -1185,50 +1185,50 @@
           "name": "Homebuilders",
           "color": "#d8b4fe",
           "rs": {
-            "ratio": 95.2,
-            "momentum": 102.56
+            "ratio": 95.24,
+            "momentum": 102.62
           },
-          "sctr": 43,
+          "sctr": 41,
           "stocks": [
             {
               "ticker": "PHM",
               "name": "PHM",
-              "price": 132.68,
-              "sctr": 68,
-              "pctRank": 72,
-              "r1": 12.97,
-              "r3": 13.02,
-              "r6": 12.3
+              "price": 133.74,
+              "sctr": 65,
+              "pctRank": 71,
+              "r1": 13.79,
+              "r3": 14.43,
+              "r6": 13.75
             },
             {
               "ticker": "DHI",
               "name": "DHI",
-              "price": 157.01,
-              "sctr": 54,
-              "pctRank": 54,
-              "r1": 6.85,
-              "r3": 14.83,
-              "r6": 8.19
+              "price": 158.49,
+              "sctr": 49,
+              "pctRank": 42,
+              "r1": 7.15,
+              "r3": 15.01,
+              "r6": 9.64
             },
             {
               "ticker": "NVR",
               "name": "NVR",
-              "price": 6649.7,
+              "price": 6734.52,
               "sctr": 37,
-              "pctRank": 28,
-              "r1": 8.39,
-              "r3": 1.04,
-              "r6": -9.51
+              "pctRank": 31,
+              "r1": 8.82,
+              "r3": 0.82,
+              "r6": -8.17
             },
             {
               "ticker": "LEN",
               "name": "LEN",
-              "price": 87.06,
-              "sctr": 15,
-              "pctRank": 6,
-              "r1": -3.41,
-              "r3": 0.8,
-              "r6": -15.43
+              "price": 88.22,
+              "sctr": 14,
+              "pctRank": 4,
+              "r1": -2.94,
+              "r3": 3.82,
+              "r6": -14.25
             }
           ]
         },
@@ -1236,50 +1236,50 @@
           "name": "Restaurants",
           "color": "#f3e8ff",
           "rs": {
-            "ratio": 95.47,
-            "momentum": 100.61
+            "ratio": 95.56,
+            "momentum": 100.75
           },
-          "sctr": 46,
+          "sctr": 47,
           "stocks": [
             {
               "ticker": "SBUX",
               "name": "SBUX",
-              "price": 103.41,
+              "price": 104.28,
               "sctr": 71,
               "pctRank": 78,
-              "r1": 7.15,
-              "r3": 16.11,
-              "r6": 22.38
+              "r1": 9.21,
+              "r3": 16.02,
+              "r6": 23.8
             },
             {
               "ticker": "CMG",
               "name": "CMG",
-              "price": 35.01,
-              "sctr": 51,
-              "pctRank": 48,
-              "r1": 14.66,
-              "r3": 9.39,
-              "r6": -5.8
+              "price": 35.38,
+              "sctr": 50,
+              "pctRank": 44,
+              "r1": 21.02,
+              "r3": 8.48,
+              "r6": -4.52
             },
             {
               "ticker": "BKNG",
               "name": "BKNG",
-              "price": 182.65,
-              "sctr": 42,
-              "pctRank": 37,
-              "r1": 8.18,
-              "r3": 8.76,
-              "r6": -15.61
+              "price": 184.56,
+              "sctr": 40,
+              "pctRank": 32,
+              "r1": 10.69,
+              "r3": 10.49,
+              "r6": -14.55
             },
             {
               "ticker": "MCD",
               "name": "MCD",
-              "price": 269.44,
-              "sctr": 21,
-              "pctRank": 11,
-              "r1": -1.76,
-              "r3": -12.72,
-              "r6": -11.59
+              "price": 280.39,
+              "sctr": 28,
+              "pctRank": 21,
+              "r1": 1.42,
+              "r3": -8.11,
+              "r6": -7.84
             }
           ]
         }
@@ -1291,50 +1291,50 @@
           "name": "Oil & Gas",
           "color": "#a855f7",
           "rs": {
-            "ratio": 100.87,
-            "momentum": 97.0
+            "ratio": 100.96,
+            "momentum": 97.12
           },
-          "sctr": 37,
+          "sctr": 35,
           "stocks": [
             {
               "ticker": "EOG",
               "name": "EOG",
-              "price": 128.57,
-              "sctr": 49,
-              "pctRank": 46,
-              "r1": -5.89,
-              "r3": -10.34,
-              "r6": 24.96
+              "price": 130.84,
+              "sctr": 50,
+              "pctRank": 44,
+              "r1": -5.61,
+              "r3": -6.14,
+              "r6": 25.95
             },
             {
               "ticker": "XOM",
               "name": "XOM",
-              "price": 136.25,
-              "sctr": 38,
-              "pctRank": 31,
-              "r1": -8.82,
-              "r3": -19.13,
-              "r6": 14.55
-            },
-            {
-              "ticker": "COP",
-              "name": "COP",
-              "price": 103.22,
-              "sctr": 32,
-              "pctRank": 23,
-              "r1": -10.64,
-              "r3": -21.21,
-              "r6": 13.17
+              "price": 136.97,
+              "sctr": 35,
+              "pctRank": 28,
+              "r1": -8.48,
+              "r3": -14.18,
+              "r6": 14.7
             },
             {
               "ticker": "CVX",
               "name": "CVX",
-              "price": 165.7,
-              "sctr": 30,
-              "pctRank": 22,
-              "r1": -10.85,
-              "r3": -19.19,
-              "r6": 11.85
+              "price": 169.13,
+              "sctr": 29,
+              "pctRank": 25,
+              "r1": -9.87,
+              "r3": -13.53,
+              "r6": 13.15
+            },
+            {
+              "ticker": "COP",
+              "name": "COP",
+              "price": 104.75,
+              "sctr": 29,
+              "pctRank": 25,
+              "r1": -10.37,
+              "r3": -17.79,
+              "r6": 12.94
             }
           ]
         },
@@ -1342,40 +1342,40 @@
           "name": "Pipelines",
           "color": "#7e22ce",
           "rs": {
-            "ratio": 101.08,
-            "momentum": 98.95
+            "ratio": 101.18,
+            "momentum": 99.11
           },
           "sctr": 55,
           "stocks": [
             {
               "ticker": "WMB",
               "name": "WMB",
-              "price": 72.78,
-              "sctr": 59,
-              "pctRank": 60,
-              "r1": 4.64,
-              "r3": 0.75,
-              "r6": 23.46
+              "price": 73.15,
+              "sctr": 57,
+              "pctRank": 57,
+              "r1": 3.36,
+              "r3": 2.59,
+              "r6": 23.36
             },
             {
               "ticker": "OKE",
               "name": "OKE",
-              "price": 85.71,
-              "sctr": 54,
-              "pctRank": 54,
-              "r1": 0.88,
-              "r3": -4.04,
-              "r6": 19.39
+              "price": 87.86,
+              "sctr": 56,
+              "pctRank": 55,
+              "r1": 1.3,
+              "r3": 1.78,
+              "r6": 22.1
             },
             {
               "ticker": "KMI",
               "name": "KMI",
-              "price": 31.73,
+              "price": 32.07,
               "sctr": 53,
-              "pctRank": 52,
-              "r1": 2.8,
-              "r3": -4.44,
-              "r6": 18.02
+              "pctRank": 51,
+              "r1": 2.0,
+              "r3": -1.57,
+              "r6": 18.38
             }
           ]
         }
@@ -1387,60 +1387,60 @@
           "name": "Pharma",
           "color": "#14b8a6",
           "rs": {
-            "ratio": 102.81,
-            "momentum": 102.78
+            "ratio": 102.97,
+            "momentum": 103.01
           },
           "sctr": 69,
           "stocks": [
             {
               "ticker": "JNJ",
               "name": "JNJ",
-              "price": 254.03,
-              "sctr": 84,
-              "pctRank": 94,
-              "r1": 13.66,
-              "r3": 4.57,
-              "r6": 23.78
+              "price": 263.04,
+              "sctr": 88,
+              "pctRank": 99,
+              "r1": 18.0,
+              "r3": 8.39,
+              "r6": 28.52
             },
             {
               "ticker": "MRK",
               "name": "MRK",
-              "price": 125.39,
+              "price": 129.51,
               "sctr": 81,
-              "pctRank": 90,
-              "r1": 9.67,
-              "r3": 5.04,
-              "r6": 19.29
-            },
-            {
-              "ticker": "LLY",
-              "name": "LLY",
-              "price": 1192.14,
-              "sctr": 78,
-              "pctRank": 86,
-              "r1": 10.17,
-              "r3": 29.84,
-              "r6": 10.88
+              "pctRank": 91,
+              "r1": 12.75,
+              "r3": 7.92,
+              "r6": 23.9
             },
             {
               "ticker": "ABBV",
               "name": "ABBV",
-              "price": 251.07,
-              "sctr": 78,
-              "pctRank": 86,
-              "r1": 17.9,
-              "r3": 16.42,
-              "r6": 10.54
+              "price": 261.14,
+              "sctr": 80,
+              "pctRank": 87,
+              "r1": 21.21,
+              "r3": 22.54,
+              "r6": 15.55
+            },
+            {
+              "ticker": "LLY",
+              "name": "LLY",
+              "price": 1210.79,
+              "sctr": 75,
+              "pctRank": 81,
+              "r1": 13.76,
+              "r3": 27.04,
+              "r6": 12.48
             },
             {
               "ticker": "PFE",
               "name": "PFE",
-              "price": 23.9,
-              "sctr": 24,
+              "price": 24.31,
+              "sctr": 25,
               "pctRank": 16,
-              "r1": -6.79,
-              "r3": -13.47,
-              "r6": -1.24
+              "r1": -4.89,
+              "r3": -13.49,
+              "r6": 0.54
             }
           ]
         },
@@ -1448,50 +1448,50 @@
           "name": "Biotech",
           "color": "#0d9488",
           "rs": {
-            "ratio": 97.53,
-            "momentum": 98.3
+            "ratio": 97.87,
+            "momentum": 98.81
           },
-          "sctr": 49,
+          "sctr": 56,
           "stocks": [
             {
               "ticker": "VRTX",
               "name": "VRTX",
-              "price": 498.02,
-              "sctr": 75,
-              "pctRank": 81,
-              "r1": 13.59,
-              "r3": 11.55,
-              "r6": 8.32
+              "price": 528.03,
+              "sctr": 84,
+              "pctRank": 97,
+              "r1": 24.22,
+              "r3": 18.09,
+              "r6": 16.42
             },
             {
               "ticker": "AMGN",
               "name": "AMGN",
-              "price": 361.21,
-              "sctr": 66,
-              "pctRank": 69,
-              "r1": 9.77,
-              "r3": 3.43,
-              "r6": 11.17
+              "price": 373.97,
+              "sctr": 72,
+              "pctRank": 78,
+              "r1": 13.94,
+              "r3": 6.7,
+              "r6": 15.43
             },
             {
               "ticker": "GILD",
               "name": "GILD",
-              "price": 125.97,
-              "sctr": 34,
-              "pctRank": 25,
-              "r1": -3.26,
-              "r3": -9.01,
-              "r6": 2.13
+              "price": 131.24,
+              "sctr": 44,
+              "pctRank": 37,
+              "r1": 3.58,
+              "r3": -5.84,
+              "r6": 7.86
             },
             {
               "ticker": "REGN",
               "name": "REGN",
-              "price": 624.86,
-              "sctr": 22,
-              "pctRank": 13,
-              "r1": 4.02,
-              "r3": -18.97,
-              "r6": -19.74
+              "price": 654.36,
+              "sctr": 27,
+              "pctRank": 19,
+              "r1": 8.57,
+              "r3": -15.65,
+              "r6": -15.3
             }
           ]
         },
@@ -1499,50 +1499,50 @@
           "name": "Devices",
           "color": "#0f766e",
           "rs": {
-            "ratio": 94.74,
-            "momentum": 100.87
+            "ratio": 94.87,
+            "momentum": 101.07
           },
-          "sctr": 23,
+          "sctr": 28,
           "stocks": [
             {
               "ticker": "SYK",
               "name": "SYK",
-              "price": 313.36,
-              "sctr": 29,
-              "pctRank": 20,
-              "r1": 4.96,
-              "r3": -4.32,
-              "r6": -10.38
+              "price": 326.57,
+              "sctr": 36,
+              "pctRank": 29,
+              "r1": 11.58,
+              "r3": -0.67,
+              "r6": -7.07
             },
             {
               "ticker": "ABT",
               "name": "ABT",
-              "price": 92.17,
-              "sctr": 26,
-              "pctRank": 19,
-              "r1": 5.05,
-              "r3": -9.63,
-              "r6": -25.18
+              "price": 95.28,
+              "sctr": 28,
+              "pctRank": 21,
+              "r1": 9.57,
+              "r3": -6.34,
+              "r6": -23.42
             },
             {
               "ticker": "MDT",
               "name": "MDT",
-              "price": 79.19,
-              "sctr": 22,
-              "pctRank": 13,
-              "r1": 7.79,
-              "r3": -7.98,
-              "r6": -16.38
+              "price": 83.19,
+              "sctr": 28,
+              "pctRank": 21,
+              "r1": 13.61,
+              "r3": -2.68,
+              "r6": -12.66
             },
             {
               "ticker": "ISRG",
               "name": "ISRG",
-              "price": 402.31,
-              "sctr": 15,
-              "pctRank": 6,
-              "r1": -2.38,
-              "r3": -12.72,
-              "r6": -30.09
+              "price": 426.0,
+              "sctr": 21,
+              "pctRank": 11,
+              "r1": 5.88,
+              "r3": -8.29,
+              "r6": -25.61
             }
           ]
         },
@@ -1550,50 +1550,50 @@
           "name": "Services",
           "color": "#115e59",
           "rs": {
-            "ratio": 100.95,
-            "momentum": 103.04
+            "ratio": 101.02,
+            "momentum": 103.15
           },
-          "sctr": 73,
+          "sctr": 71,
           "stocks": [
             {
               "ticker": "CVS",
               "name": "CVS",
-              "price": 104.81,
-              "sctr": 91,
-              "pctRank": 99,
-              "r1": 15.67,
-              "r3": 47.23,
-              "r6": 33.26
+              "price": 104.72,
+              "sctr": 87,
+              "pctRank": 98,
+              "r1": 17.01,
+              "r3": 45.77,
+              "r6": 33.38
             },
             {
               "ticker": "UNH",
               "name": "UNH",
-              "price": 426.52,
-              "sctr": 89,
-              "pctRank": 97,
-              "r1": 12.93,
-              "r3": 58.56,
-              "r6": 31.44
+              "price": 424.95,
+              "sctr": 83,
+              "pctRank": 94,
+              "r1": 13.09,
+              "r3": 56.07,
+              "r6": 29.62
             },
             {
               "ticker": "ELV",
               "name": "ELV",
-              "price": 415.95,
-              "sctr": 80,
-              "pctRank": 89,
-              "r1": 3.74,
-              "r3": 42.6,
-              "r6": 20.64
+              "price": 417.45,
+              "sctr": 75,
+              "pctRank": 81,
+              "r1": 7.81,
+              "r3": 40.38,
+              "r6": 20.89
             },
             {
               "ticker": "CI",
               "name": "CI",
-              "price": 277.13,
-              "sctr": 34,
-              "pctRank": 25,
-              "r1": 1.64,
-              "r3": 4.51,
-              "r6": 1.55
+              "price": 287.58,
+              "sctr": 40,
+              "pctRank": 32,
+              "r1": 6.07,
+              "r3": 8.21,
+              "r6": 5.17
             }
           ]
         }
@@ -1605,30 +1605,30 @@
           "name": "Internet",
           "color": "#fcd34d",
           "rs": {
-            "ratio": 93.78,
-            "momentum": 96.81
+            "ratio": 93.44,
+            "momentum": 96.3
           },
-          "sctr": 47,
+          "sctr": 38,
           "stocks": [
             {
               "ticker": "GOOGL",
               "name": "GOOGL",
-              "price": 361.19,
-              "sctr": 63,
-              "pctRank": 66,
-              "r1": -3.95,
-              "r3": 25.72,
-              "r6": 15.36
+              "price": 359.69,
+              "sctr": 56,
+              "pctRank": 55,
+              "r1": -0.53,
+              "r3": 21.0,
+              "r6": 14.75
             },
             {
               "ticker": "META",
               "name": "META",
-              "price": 612.97,
-              "sctr": 32,
-              "pctRank": 23,
-              "r1": 2.17,
-              "r3": 7.23,
-              "r6": -6.74
+              "price": 582.76,
+              "sctr": 20,
+              "pctRank": 8,
+              "r1": -2.41,
+              "r3": 0.75,
+              "r6": -12.37
             }
           ]
         },
@@ -1636,40 +1636,40 @@
           "name": "Telecom",
           "color": "#fde047",
           "rs": {
-            "ratio": 95.7,
-            "momentum": 99.2
+            "ratio": 95.76,
+            "momentum": 99.28
           },
-          "sctr": 13,
+          "sctr": 16,
           "stocks": [
             {
               "ticker": "VZ",
               "name": "VZ",
-              "price": 42.01,
-              "sctr": 23,
-              "pctRank": 15,
-              "r1": -11.97,
-              "r3": -14.99,
-              "r6": 7.17
+              "price": 42.55,
+              "sctr": 25,
+              "pctRank": 16,
+              "r1": -11.12,
+              "r3": -12.44,
+              "r6": 7.95
             },
             {
               "ticker": "TMUS",
               "name": "TMUS",
-              "price": 173.11,
-              "sctr": 12,
-              "pctRank": 4,
-              "r1": -7.27,
-              "r3": -17.13,
-              "r6": -13.94
+              "price": 177.5,
+              "sctr": 17,
+              "pctRank": 7,
+              "r1": -5.96,
+              "r3": -12.59,
+              "r6": -11.99
             },
             {
               "ticker": "T",
               "name": "T",
-              "price": 20.5,
-              "sctr": 6,
-              "pctRank": 0,
-              "r1": -16.48,
-              "r3": -28.47,
-              "r6": -15.43
+              "price": 20.57,
+              "sctr": 7,
+              "pctRank": 1,
+              "r1": -16.43,
+              "r3": -26.6,
+              "r6": -15.26
             }
           ]
         },
@@ -1677,40 +1677,40 @@
           "name": "Media",
           "color": "#facc15",
           "rs": {
-            "ratio": 95.75,
-            "momentum": 99.36
+            "ratio": 95.82,
+            "momentum": 99.48
           },
-          "sctr": 17,
+          "sctr": 20,
           "stocks": [
-            {
-              "ticker": "CMCSA",
-              "name": "CMCSA",
-              "price": 23.74,
-              "sctr": 25,
-              "pctRank": 17,
-              "r1": -3.96,
-              "r3": -15.12,
-              "r6": -11.98
-            },
             {
               "ticker": "DIS",
               "name": "DIS",
-              "price": 95.75,
-              "sctr": 16,
-              "pctRank": 8,
-              "r1": -6.18,
-              "r3": 0.13,
-              "r6": -15.5
+              "price": 99.43,
+              "sctr": 23,
+              "pctRank": 13,
+              "r1": -1.19,
+              "r3": 3.71,
+              "r6": -12.74
+            },
+            {
+              "ticker": "CMCSA",
+              "name": "CMCSA",
+              "price": 23.76,
+              "sctr": 23,
+              "pctRank": 13,
+              "r1": -3.06,
+              "r3": -14.1,
+              "r6": -12.16
             },
             {
               "ticker": "NFLX",
               "name": "NFLX",
-              "price": 74.19,
-              "sctr": 10,
-              "pctRank": 2,
-              "r1": -13.57,
-              "r3": -22.82,
-              "r6": -21.21
+              "price": 77.59,
+              "sctr": 14,
+              "pctRank": 4,
+              "r1": -6.88,
+              "r3": -18.82,
+              "r6": -17.28
             }
           ]
         }
@@ -1722,50 +1722,50 @@
           "name": "Beverages",
           "color": "#84cc16",
           "rs": {
-            "ratio": 97.93,
-            "momentum": 99.0
+            "ratio": 98.17,
+            "momentum": 99.36
           },
-          "sctr": 54,
+          "sctr": 59,
           "stocks": [
-            {
-              "ticker": "MO",
-              "name": "MO",
-              "price": 71.55,
-              "sctr": 69,
-              "pctRank": 75,
-              "r1": 5.8,
-              "r3": 10.06,
-              "r6": 28.13
-            },
             {
               "ticker": "KO",
               "name": "KO",
-              "price": 81.32,
-              "sctr": 63,
-              "pctRank": 66,
-              "r1": 4.08,
-              "r3": 7.61,
-              "r6": 17.48
+              "price": 83.96,
+              "sctr": 73,
+              "pctRank": 80,
+              "r1": 7.74,
+              "r3": 11.03,
+              "r6": 21.38
+            },
+            {
+              "ticker": "MO",
+              "name": "MO",
+              "price": 72.72,
+              "sctr": 70,
+              "pctRank": 75,
+              "r1": 6.57,
+              "r3": 12.69,
+              "r6": 29.9
             },
             {
               "ticker": "PM",
               "name": "PM",
-              "price": 177.65,
-              "sctr": 56,
-              "pctRank": 57,
-              "r1": 3.73,
-              "r3": 8.31,
-              "r6": 11.6
+              "price": 182.33,
+              "sctr": 60,
+              "pctRank": 62,
+              "r1": 5.82,
+              "r3": 16.84,
+              "r6": 14.51
             },
             {
               "ticker": "PEP",
               "name": "PEP",
-              "price": 141.21,
-              "sctr": 29,
-              "pctRank": 20,
-              "r1": 0.83,
-              "r3": -8.11,
-              "r6": -0.18
+              "price": 144.16,
+              "sctr": 34,
+              "pctRank": 28,
+              "r1": 2.61,
+              "r3": -5.77,
+              "r6": 1.96
             }
           ]
         },
@@ -1773,40 +1773,40 @@
           "name": "Grocery",
           "color": "#65a30d",
           "rs": {
-            "ratio": 96.73,
-            "momentum": 97.76
+            "ratio": 96.88,
+            "momentum": 97.98
           },
-          "sctr": 20,
+          "sctr": 24,
           "stocks": [
             {
               "ticker": "COST",
               "name": "COST",
-              "price": 924.6,
-              "sctr": 30,
-              "pctRank": 22,
-              "r1": -2.28,
-              "r3": -7.07,
-              "r6": 6.79
+              "price": 952.02,
+              "sctr": 36,
+              "pctRank": 29,
+              "r1": -0.23,
+              "r3": -4.32,
+              "r6": 10.28
             },
             {
               "ticker": "WMT",
               "name": "WMT",
-              "price": 108.84,
-              "sctr": 18,
-              "pctRank": 10,
-              "r1": -5.0,
-              "r3": -12.25,
-              "r6": -2.91
+              "price": 111.72,
+              "sctr": 20,
+              "pctRank": 8,
+              "r1": -1.16,
+              "r3": -10.27,
+              "r6": 0.23
             },
             {
               "ticker": "KR",
               "name": "KR",
-              "price": 56.22,
-              "sctr": 14,
-              "pctRank": 5,
-              "r1": -8.61,
-              "r3": -21.89,
-              "r6": -9.41
+              "price": 58.23,
+              "sctr": 17,
+              "pctRank": 7,
+              "r1": -5.4,
+              "r3": -17.03,
+              "r6": -6.17
             }
           ]
         },
@@ -1814,40 +1814,40 @@
           "name": "Household",
           "color": "#4d7c0f",
           "rs": {
-            "ratio": 97.27,
-            "momentum": 100.75
+            "ratio": 97.37,
+            "momentum": 100.89
           },
-          "sctr": 61,
+          "sctr": 67,
           "stocks": [
-            {
-              "ticker": "KMB",
-              "name": "KMB",
-              "price": 111.44,
-              "sctr": 74,
-              "pctRank": 79,
-              "r1": 15.33,
-              "r3": 17.08,
-              "r6": 13.15
-            },
             {
               "ticker": "CL",
               "name": "CL",
-              "price": 92.77,
-              "sctr": 70,
-              "pctRank": 76,
-              "r1": 4.91,
-              "r3": 9.55,
-              "r6": 17.86
+              "price": 95.12,
+              "sctr": 77,
+              "pctRank": 84,
+              "r1": 7.8,
+              "r3": 12.09,
+              "r6": 21.08
+            },
+            {
+              "ticker": "KMB",
+              "name": "KMB",
+              "price": 114.67,
+              "sctr": 77,
+              "pctRank": 84,
+              "r1": 19.32,
+              "r3": 19.15,
+              "r6": 15.89
             },
             {
               "ticker": "PG",
               "name": "PG",
-              "price": 147.47,
-              "sctr": 39,
-              "pctRank": 33,
-              "r1": 5.11,
-              "r3": 2.86,
-              "r6": 3.52
+              "price": 151.5,
+              "sctr": 47,
+              "pctRank": 40,
+              "r1": 7.59,
+              "r3": 5.98,
+              "r6": 6.72
             }
           ]
         }
@@ -1859,50 +1859,50 @@
           "name": "Chemicals",
           "color": "#f97316",
           "rs": {
-            "ratio": 97.38,
-            "momentum": 100.62
+            "ratio": 97.52,
+            "momentum": 100.83
           },
-          "sctr": 68,
+          "sctr": 70,
           "stocks": [
             {
               "ticker": "APD",
               "name": "APD",
-              "price": 306.43,
-              "sctr": 81,
-              "pctRank": 90,
-              "r1": 10.56,
-              "r3": 6.85,
-              "r6": 26.09
+              "price": 313.98,
+              "sctr": 83,
+              "pctRank": 94,
+              "r1": 13.11,
+              "r3": 9.19,
+              "r6": 28.68
             },
             {
               "ticker": "LIN",
               "name": "LIN",
-              "price": 533.55,
-              "sctr": 75,
-              "pctRank": 81,
-              "r1": 7.59,
-              "r3": 8.0,
-              "r6": 25.94
+              "price": 546.68,
+              "sctr": 80,
+              "pctRank": 87,
+              "r1": 10.57,
+              "r3": 11.06,
+              "r6": 28.45
             },
             {
               "ticker": "SHW",
               "name": "SHW",
-              "price": 346.02,
-              "sctr": 62,
-              "pctRank": 64,
-              "r1": 17.41,
-              "r3": 8.22,
-              "r6": 6.9
+              "price": 352.05,
+              "sctr": 61,
+              "pctRank": 63,
+              "r1": 20.2,
+              "r3": 8.38,
+              "r6": 8.43
             },
             {
               "ticker": "ECL",
               "name": "ECL",
-              "price": 278.61,
-              "sctr": 55,
-              "pctRank": 56,
-              "r1": 11.55,
-              "r3": 5.05,
-              "r6": 5.51
+              "price": 283.32,
+              "sctr": 56,
+              "pctRank": 55,
+              "r1": 10.88,
+              "r3": 5.41,
+              "r6": 7.67
             }
           ]
         },
@@ -1910,40 +1910,40 @@
           "name": "Metals",
           "color": "#ea580c",
           "rs": {
-            "ratio": 103.57,
-            "momentum": 99.09
+            "ratio": 103.62,
+            "momentum": 99.17
           },
-          "sctr": 42,
+          "sctr": 41,
           "stocks": [
             {
               "ticker": "NUE",
               "name": "NUE",
-              "price": 219.0,
-              "sctr": 59,
-              "pctRank": 60,
-              "r1": -12.69,
-              "r3": 29.81,
-              "r6": 33.57
+              "price": 220.72,
+              "sctr": 57,
+              "pctRank": 57,
+              "r1": -14.48,
+              "r3": 27.32,
+              "r6": 35.17
             },
             {
               "ticker": "FCX",
               "name": "FCX",
-              "price": 60.59,
-              "sctr": 51,
-              "pctRank": 48,
-              "r1": -9.59,
-              "r3": 3.3,
-              "r6": 18.24
+              "price": 60.95,
+              "sctr": 47,
+              "pctRank": 40,
+              "r1": -15.03,
+              "r3": -0.2,
+              "r6": 19.1
             },
             {
               "ticker": "NEM",
               "name": "NEM",
-              "price": 93.28,
-              "sctr": 17,
-              "pctRank": 9,
-              "r1": -13.77,
-              "r3": -13.62,
-              "r6": -6.13
+              "price": 97.05,
+              "sctr": 20,
+              "pctRank": 8,
+              "r1": -11.39,
+              "r3": -14.52,
+              "r6": -4.31
             }
           ]
         }
@@ -1955,50 +1955,50 @@
           "name": "Electric Util",
           "color": "#fb7185",
           "rs": {
-            "ratio": 97.72,
-            "momentum": 98.11
+            "ratio": 98.11,
+            "momentum": 98.7
           },
-          "sctr": 51,
+          "sctr": 56,
           "stocks": [
             {
               "ticker": "AEP",
               "name": "AEP",
-              "price": 135.06,
-              "sctr": 66,
-              "pctRank": 69,
-              "r1": 9.14,
-              "r3": 3.79,
-              "r6": 18.46
+              "price": 138.54,
+              "sctr": 70,
+              "pctRank": 75,
+              "r1": 8.98,
+              "r3": 6.02,
+              "r6": 21.26
             },
             {
               "ticker": "SO",
               "name": "SO",
-              "price": 95.15,
-              "sctr": 52,
-              "pctRank": 50,
-              "r1": 6.87,
-              "r3": -0.61,
-              "r6": 10.47
+              "price": 97.94,
+              "sctr": 58,
+              "pctRank": 60,
+              "r1": 8.19,
+              "r3": 1.86,
+              "r6": 13.62
             },
             {
               "ticker": "DUK",
               "name": "DUK",
-              "price": 125.78,
-              "sctr": 47,
-              "pctRank": 43,
-              "r1": 4.94,
-              "r3": -3.12,
-              "r6": 8.9
+              "price": 129.5,
+              "sctr": 54,
+              "pctRank": 54,
+              "r1": 6.92,
+              "r3": -0.21,
+              "r6": 11.94
             },
             {
               "ticker": "NEE",
               "name": "NEE",
-              "price": 86.38,
-              "sctr": 42,
+              "price": 88.36,
+              "sctr": 44,
               "pctRank": 37,
-              "r1": 4.02,
-              "r3": -6.34,
-              "r6": 9.09
+              "r1": 3.89,
+              "r3": -4.18,
+              "r6": 11.27
             }
           ]
         },
@@ -2006,30 +2006,30 @@
           "name": "Water Util",
           "color": "#f43f5e",
           "rs": {
-            "ratio": 95.72,
-            "momentum": 100.47
+            "ratio": 95.94,
+            "momentum": 100.8
           },
-          "sctr": 46,
+          "sctr": 54,
           "stocks": [
-            {
-              "ticker": "XEL",
-              "name": "XEL",
-              "price": 79.71,
-              "sctr": 47,
-              "pctRank": 43,
-              "r1": 5.12,
-              "r3": 1.1,
-              "r6": 9.16
-            },
             {
               "ticker": "AWK",
               "name": "AWK",
-              "price": 131.85,
-              "sctr": 45,
-              "pctRank": 40,
-              "r1": 8.9,
-              "r3": -2.37,
-              "r6": 2.11
+              "price": 136.89,
+              "sctr": 57,
+              "pctRank": 57,
+              "r1": 10.68,
+              "r3": 0.8,
+              "r6": 5.83
+            },
+            {
+              "ticker": "XEL",
+              "name": "XEL",
+              "price": 81.93,
+              "sctr": 51,
+              "pctRank": 48,
+              "r1": 6.0,
+              "r3": 3.58,
+              "r6": 12.09
             }
           ]
         }
@@ -2041,40 +2041,40 @@
           "name": "Residential REITs",
           "color": "#f472b6",
           "rs": {
-            "ratio": 97.87,
-            "momentum": 100.82
+            "ratio": 97.94,
+            "momentum": 100.93
           },
-          "sctr": 63,
+          "sctr": 62,
           "stocks": [
-            {
-              "ticker": "INVH",
-              "name": "INVH",
-              "price": 30.36,
-              "sctr": 67,
-              "pctRank": 72,
-              "r1": 5.34,
-              "r3": 23.41,
-              "r6": 11.86
-            },
             {
               "ticker": "EQR",
               "name": "EQR",
-              "price": 68.62,
-              "sctr": 66,
-              "pctRank": 69,
-              "r1": 5.29,
-              "r3": 17.18,
-              "r6": 12.2
+              "price": 69.81,
+              "sctr": 67,
+              "pctRank": 73,
+              "r1": 6.53,
+              "r3": 18.46,
+              "r6": 13.66
+            },
+            {
+              "ticker": "INVH",
+              "name": "INVH",
+              "price": 30.52,
+              "sctr": 63,
+              "pctRank": 66,
+              "r1": 6.79,
+              "r3": 23.96,
+              "r6": 11.59
             },
             {
               "ticker": "AVB",
               "name": "AVB",
-              "price": 190.37,
-              "sctr": 56,
+              "price": 193.84,
+              "sctr": 57,
               "pctRank": 57,
-              "r1": 5.14,
-              "r3": 17.65,
-              "r6": 6.67
+              "r1": 6.67,
+              "r3": 18.67,
+              "r6": 7.95
             }
           ]
         },
@@ -2082,40 +2082,40 @@
           "name": "Commercial REITs",
           "color": "#ec4899",
           "rs": {
-            "ratio": 103.12,
-            "momentum": 101.15
+            "ratio": 103.35,
+            "momentum": 101.49
           },
-          "sctr": 57,
+          "sctr": 59,
           "stocks": [
             {
               "ticker": "SPG",
               "name": "SPG",
-              "price": 222.85,
-              "sctr": 79,
-              "pctRank": 88,
-              "r1": 11.14,
-              "r3": 20.78,
-              "r6": 21.5
+              "price": 225.76,
+              "sctr": 80,
+              "pctRank": 87,
+              "r1": 12.13,
+              "r3": 21.34,
+              "r6": 23.57
             },
             {
               "ticker": "O",
               "name": "O",
-              "price": 61.85,
-              "sctr": 52,
-              "pctRank": 50,
-              "r1": 4.3,
-              "r3": 2.45,
-              "r6": 12.29
+              "price": 63.83,
+              "sctr": 58,
+              "pctRank": 60,
+              "r1": 7.01,
+              "r3": 4.5,
+              "r6": 15.4
             },
             {
               "ticker": "PLD",
               "name": "PLD",
-              "price": 136.82,
-              "sctr": 40,
+              "price": 139.46,
+              "sctr": 41,
               "pctRank": 35,
-              "r1": -0.86,
-              "r3": 4.26,
-              "r6": 8.12
+              "r1": 0.05,
+              "r3": 5.34,
+              "r6": 9.77
             }
           ]
         },
@@ -2123,50 +2123,50 @@
           "name": "Specialty REITs",
           "color": "#db2777",
           "rs": {
-            "ratio": 100.93,
-            "momentum": 99.72
+            "ratio": 100.92,
+            "momentum": 99.7
           },
-          "sctr": 40,
+          "sctr": 38,
           "stocks": [
             {
               "ticker": "PSA",
               "name": "PSA",
-              "price": 323.07,
-              "sctr": 74,
-              "pctRank": 79,
-              "r1": 10.15,
-              "r3": 20.43,
-              "r6": 27.04
+              "price": 329.53,
+              "sctr": 76,
+              "pctRank": 83,
+              "r1": 11.19,
+              "r3": 20.4,
+              "r6": 28.67
             },
             {
               "ticker": "EQIX",
               "name": "EQIX",
-              "price": 1014.64,
-              "sctr": 57,
-              "pctRank": 58,
-              "r1": -3.41,
-              "r3": 4.03,
-              "r6": 34.01
+              "price": 1001.9,
+              "sctr": 52,
+              "pctRank": 49,
+              "r1": -6.53,
+              "r3": 1.05,
+              "r6": 31.52
             },
             {
               "ticker": "AMT",
               "name": "AMT",
-              "price": 166.04,
-              "sctr": 19,
-              "pctRank": 10,
-              "r1": -10.57,
-              "r3": -1.9,
-              "r6": -3.65
+              "price": 165.99,
+              "sctr": 16,
+              "pctRank": 6,
+              "r1": -9.7,
+              "r3": -1.0,
+              "r6": -4.22
             },
             {
               "ticker": "CCI",
               "name": "CCI",
-              "price": 76.55,
-              "sctr": 10,
-              "pctRank": 2,
-              "r1": -14.93,
-              "r3": -4.74,
-              "r6": -11.54
+              "price": 76.57,
+              "sctr": 8,
+              "pctRank": 1,
+              "r1": -13.86,
+              "r3": -4.19,
+              "r6": -11.98
             }
           ]
         }
